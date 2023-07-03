@@ -15,7 +15,7 @@ services:
       - nodejsdata:/usr/src/app/optimacros
   ftpd-server:
     image: atmoz/sftp
-     volumes:
+    volumes:
         - nodejsdata:/home/foo/upload
     ports:
         - "2222:22"
