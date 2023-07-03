@@ -15,8 +15,13 @@ services:
       - nodejsdata:/usr/src/app/optimacros
   ftpd-server:
     image: atmoz/sftp
+    container_name: sftp
     volumes:
         - nodejsdata:/home/foo/upload
     ports:
         - "2222:22"
     command: foo:pass:1001
+
+volumes:
+  - nodejsdata:
+    driver: local
