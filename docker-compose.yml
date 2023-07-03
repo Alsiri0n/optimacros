@@ -1,0 +1,22 @@
+version: "3.8"
+networks:
+  alsinet:
+    external: true
+services:
+  web:
+    build: .
+    container_name: optimacros
+    image: optimacros
+    ports:
+      - 443:8080
+    networks:
+      - alsinet
+    volumes:
+      - nodejsdata:/usr/src/app/optimacros
+  ftpd-server:
+    image: atmoz/sftp
+     volumes:
+        - nodejsdata:/home/foo/upload
+    ports:
+        - "2222:22"
+    command: foo:pass:1001
