@@ -13,6 +13,8 @@ services:
       - alsinet
     volumes:
       - nodejsdata:/usr/src/app/optimacros
+    env_file:
+      - .env
     depends_on:
       - ftpd-server
 
