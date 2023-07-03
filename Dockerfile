@@ -9,6 +9,6 @@ COPY package*.json ./
 COPY . /usr/src/app/optimacros
 # run app
 CMD [ "node", "server.js" ]
-VOLUME ["/nodejsdata"]
+VOLUME /usr/src/app/optimacros
 # expose port
 EXPOSE 8080

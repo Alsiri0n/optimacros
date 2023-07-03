@@ -3,7 +3,7 @@ networks:
   alsinet:
     external: true
 services:
-  web:
+  optimacros:
     build: .
     container_name: optimacros
     image: optimacros
@@ -13,6 +13,9 @@ services:
       - alsinet
     volumes:
       - nodejsdata:/usr/src/app/optimacros
+    depends_on:
+      - ftpd-server
+
   ftpd-server:
     image: atmoz/sftp
     container_name: sftp
@@ -23,5 +26,5 @@ services:
     command: foo:pass:1001
 
 volumes:
-  - nodejsdata:
-      driver: local
+  nodejsdata:
+    driver: local
