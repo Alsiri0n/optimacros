@@ -5,8 +5,11 @@ RUN useradd optimacros
 WORKDIR /usr/src/app/optimacros
 # copy app files
 COPY . /usr/src/app/optimacros
+# install npm packages
+RUN npm install
 # run app
-CMD [ "node", "server.js" ]
+CMD [ "node", "-r ./myapp/node_modules/dotenv/config", "\myapp\index.js" ]
+
 VOLUME /usr/src/app/optimacros
 # expose port
 EXPOSE 8080
