@@ -20,10 +20,10 @@ services:
     image: atmoz/sftp
     container_name: sftp
     volumes:
+        - users.conf:/etc/sftp/users.conf:ro
         - nodejsdata:/home/foo/upload
     ports:
         - "2222:22"
-    command: foo:pass:1001
 
 volumes:
   nodejsdata:
