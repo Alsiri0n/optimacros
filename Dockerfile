@@ -1,6 +1,4 @@
 FROM node:18
-# create user for container
-RUN useradd optimacros
 # assign default folder for project
 RUN mkdir -p /usr/src/app/optimacros
 COPY ./myapp/package.json ./
