@@ -8,7 +8,7 @@ services:
     container_name: optimacros
     image: optimacros
     ports:
-      - 443:8080
+      - 8000:8080
     networks:
       - alsinet
     volumes:
