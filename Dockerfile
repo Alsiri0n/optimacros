@@ -3,8 +3,6 @@ FROM node:18
 RUN useradd optimacros
 # assign default folder for project
 WORKDIR /usr/src/app/optimacros
-# copy package files
-COPY package*.json ./
 # copy app files
 COPY . /usr/src/app/optimacros
 # run app
