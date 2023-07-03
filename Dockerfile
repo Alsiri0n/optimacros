@@ -9,7 +9,7 @@ COPY . /usr/src/app/optimacros/myapp
 VOLUME /usr/src/app/optimacros
 WORKDIR /usr/src/app/optimacros/myapp
 # install npm packages
-RUN npm ci && npm cache clean --force
+RUN npm instal
 # run app
 
 CMD [ "node", "-r dotenv/config", "index.js" ]
