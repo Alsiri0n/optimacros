@@ -15,7 +15,7 @@ WORKDIR /usr/src/app/optimacros/myapp
 # install npm packages
 
 # run app
-ENTRYPOINT [ "node",  "server.js" ]
+ENTRYPOINT [ "node",  "index.js" ]
 CMD [ "-r", "dotenv/config"]
 
 
