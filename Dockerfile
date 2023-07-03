@@ -5,6 +5,7 @@ RUN useradd optimacros
 RUN mkdir -p /usr/src/app/optimacros
 COPY ./myapp/package.json ./
 COPY ./myapp/package-lock.json* ./
+# RUN npm instal
 RUN npm ci && npm cache clean --force
 WORKDIR /usr/src/app/optimacros
 # copy app files
@@ -12,10 +13,10 @@ COPY . /usr/src/app/optimacros/myapp
 VOLUME /usr/src/app/optimacros
 WORKDIR /usr/src/app/optimacros/myapp
 # install npm packages
-# RUN npm instal
-# run app
 
-CMD [ "node", "-r dotenv/config", "index.js" ]
+# run app
+ENTRYPOINT [ "node",  "server.js" ]
+CMD [ "-r", "dotenv/config"]
 
 
 # expose port
