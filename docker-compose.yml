@@ -22,10 +22,10 @@ services:
     image: atmoz/sftp
     container_name: sftp
     volumes:
-        - ./users.conf:/etc/sftp/users.conf:ro
-        - nodejsdata:/home/foo/upload
+      - ./users.conf:/etc/sftp/users.conf:ro
+      - nodejsdata:/home/user/upload:rw
     ports:
-        - "2222:22"
+      - "2222:22"
     networks:
       - alsinet
 
