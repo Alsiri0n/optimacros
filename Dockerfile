@@ -7,13 +7,11 @@ COPY ./myapp/package.json ./
 COPY ./myapp/package-lock.json* ./
 # RUN npm instal
 RUN npm ci && npm cache clean --force
-USER adm1n
 WORKDIR /usr/src/app/optimacros
 # copy app files
 COPY . /usr/src/app/optimacros/myapp
 VOLUME /usr/src/app/optimacros
 WORKDIR /usr/src/app/optimacros/myapp
-# install npm packages
 
 # run app
 ENTRYPOINT [ "node",  "index.js" ]
