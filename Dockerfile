@@ -1,7 +1,8 @@
 FROM node:18
 RUN useradd adm1n -u 1001 -g 100
+USER adm1n
 # assign default folder for project
-RUN mkdir -p /usr/src/app/optimacros && chown -R adm1n:users /usr/src/app/optimacros
+RUN mkdir -p /usr/src/app/optimacros && chown -R 1001:100 /usr/src/app/optimacros
 COPY ./myapp/package.json ./
 COPY ./myapp/package-lock.json* ./
 # RUN npm instal
