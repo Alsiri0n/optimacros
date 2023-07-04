@@ -9,7 +9,7 @@ RUN npm ci && npm cache clean --force
 WORKDIR /usr/src/app/optimacros
 
 # copy app files
-COPY . /usr/src/app/optimacros/myapp
+COPY . /usr/src/app/optimacros
 VOLUME /usr/src/app/optimacros
 WORKDIR /usr/src/app/optimacros/myapp
 
