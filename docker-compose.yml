@@ -26,6 +26,8 @@ services:
         - nodejsdata:/home/foo/upload
     ports:
         - "2222:22"
+    networks:
+      - alsinet
 
 volumes:
   nodejsdata:
